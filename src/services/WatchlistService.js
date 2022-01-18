@@ -26,7 +26,7 @@ class WatchlistService {
     }
     const movieToDeleteIndex = AppState.watchlist.findIndex(m => m.id == movie.id)
     AppState.watchlist.splice(movieToDeleteIndex, 1)
-    this.saveToLocal()
+    await this.saveToLocal()
     Pop.toast(`${movie.title} was removed`)
   }
 
